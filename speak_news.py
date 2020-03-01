@@ -3,9 +3,11 @@ import requests
 import json
 
 def speak(str):
+    """Function takes one string and speaks the string as output"""
     speak = Dispatch("SAPI.SpVoice")
     speak.speak(str)
 
+# The following code will get top news from news ap website
 url = f"http://newsapi.org/v2/top-headlines?country=in&apiKey={input('Please enter your API Key(without spaces): ')}"
 re = requests.get(url)
 data = re.text
